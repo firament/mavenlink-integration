@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport"
+	      content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - ml-poc</title>
+
+	<environment include="Development">
+		<link rel="stylesheet"
+		      href="~/css/bootstrap-mlp.css" />
+		<link rel="stylesheet"
+		      href="~/css/site.css" />
+	</environment>
+	<environment exclude="Development">
+		<link rel="stylesheet"
+		      href="~/css/bootstrap-mlp.min.css" />
+		<link rel="stylesheet"
+		      href="~/css/site.min.css" />
+	</environment>
+</head>
+
+<body class="p-0">
+
+	<!-- ========================================================================================================== -->
+	<!-- Masthead -->
+	<nav class="navbar bg-info">
+		<div class="navbar-header">
+			<a asp-page="/Index"
+			   class="h1 text-white">Proof of Capability - Mavenlink integration</a>
+		</div>
+	</nav>
+
+	<!-- ========================================================================================================== -->
+	<!-- Menu bar -->
+	<nav class="navbar navbar-expand-md navbar-inverse">
+		<a id="f38c"
+		   class="navbar-brand"
+		   href="/dashboard">Home</a>
+		<button class="navbar-toggler"
+		        type="button"
+		        data-toggle="collapse"
+		        data-target="#navbarSupportedContent"
+		        aria-controls="navbarSupportedContent"
+		        aria-expanded="false"
+		        aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse"
+		     id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-link"><a id="mnuAbout"
+					   class=""
+					   asp-page="/About">About</a></li>
+				<li class="nav-link"><a id="mnuContact"
+					   class=""
+					   asp-page="/Contact">Contact</a></li>
+			</ul>
+		</div>
+	</nav>
+
+
+	<div class="container-fluid body-content">
+		@RenderBody()
+		<hr />
+		<footer>
+			<p>&copy; 2018 - mlpoca [Custom Layout]</p>
+		</footer>
+	</div>
+
+	<environment include="Development">
+		<script src="~/js/jquery.js"></script>
+		<script src="~/js/bootstrap-mlp.js"></script>
+		<script src="~/js/site.js"
+		        asp-append-version="true"></script>
+	</environment>
+	<environment exclude="Development">
+		<script src="~/js/jquery.min.js"></script>
+		<script src="~/js/bootstrap-mlp.min.js"></script>
+		<script src="~/js/site.min.js"
+		        asp-append-version="true"></script>
+	</environment>
+
+	@RenderSection("Scripts", required: false)
+</body>

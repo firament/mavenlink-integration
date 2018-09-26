@@ -1,0 +1,20 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Testing Dashboard";
+}
+
+<div class="row">
+    <div class="col-12">
+        <a href="/Signin.cshtml" class="btn btn-lg btn-outline-primary">Test redirect link</a>
+    </div>
+    <div class="col-12">
+        <form id="frmPost" action="/dashboard" method="POST" enctype="application/x-www-form-urlencoded" >
+        <input type="text" id="txtWS" name="txtWS" value="wscode">
+        <button type="submit" class="btn btn-outline-dark">Submit</button>
+        <!--
+            formaction attribute on a <button> or <input> element.
+        -->
+        </form>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+_local-notes.md
+/.vscode
+/bin
+/obj
+/wwwroot/lib
+/Pages/About.cshtml
+/Pages/About.cshtml.cs
+/Pages/Contact.cshtml
+/Pages/Contact.cshtml.cs
+/Pages/Privacy.cshtml
+/Pages/Privacy.cshtml.cs
+/out/
+
+/* Temporary filters, till need confirmed*/
+/wwwroot/fonts
+/Models/PvtTestData.cs

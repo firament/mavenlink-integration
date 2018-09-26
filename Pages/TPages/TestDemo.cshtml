@@ -1,0 +1,18 @@
+  @page 
+  @model TestDemoModel 
+  @{ 
+	  ViewData["Title"] = "Using Demo Account"; 
+	  }
+
+  <div class="row">
+    <div class="h1">
+      Test Demo Page
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+		<textarea class="text-monospace w-100">@Model.ResponseText</textarea>
+    </div>
+  </div>
+
