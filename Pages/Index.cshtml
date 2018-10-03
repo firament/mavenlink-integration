@@ -31,19 +31,24 @@ ViewData["Title"] = "Home page";
 </div>
 
 <div class="row">
-    <div class="col-3 text-center">
+    <div class="col-2 text-center">
+        <a href="/NLogTest"
+           class="btn btn-lg btn-outline-secondary">Test NLog output</a>
+    </div>
+
+    <div class="col-2 text-center">
         <a href="/Signin?code=demo"
            class="btn btn-lg btn-outline-primary">Test redirect link</a>
     </div>
 
-    <div class="col-3 text-center">
+    <div class="col-4 text-center">
         <form id="frmPost"
               action="/dashboard"
               method="POST"
               enctype="application/x-www-form-urlencoded"
-              class="form-inline">
+              class="form-inline w-100">
 
-            <div class="input-group">
+            <div class="input-group w-100">
                 <input type="text"
                        id="txtWS"
                        name="txtWS"
@@ -65,12 +70,12 @@ ViewData["Title"] = "Home page";
         </form>
     </div>
 
-    <div class="col-3 text-center">
+    <div class="col-2 text-center">
         <a href="TPages/TestDemo"
            class="">Test with Demo Account</a>
     </div>
 
-    <div class="col-3 text-center">
+    <div class="col-2 text-center">
         <a href="TPages/TestUser"
            class="">Test with Demo Account</a>
     </div>

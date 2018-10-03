@@ -5,13 +5,22 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
+using Microsoft.Extensions.Logging;
+
 namespace mlpoca.Pages
 {
-    public class IndexModel : Models.MpcPageModel
-    {
-        public void OnGet()
-        {
+	public class IndexModel : Models.MpcPageModel
+	{
+		private readonly ILogger<IndexModel> _logger;
+		public IndexModel(ILogger<IndexModel> logger)
+		{
+			_logger = logger;
+		}
 
-        }
-    }
+
+		public void OnGet()
+		{
+			_logger.LogInformation("Index page says hello");
+		}
+	}
 }

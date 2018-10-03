@@ -1,4 +1,4 @@
-_local-notes.md
+_local-notes*.md
 /.vscode
 /bin
 /obj
@@ -10,6 +10,7 @@ _local-notes.md
 /Pages/Privacy.cshtml
 /Pages/Privacy.cshtml.cs
 /out/
+01-Notes/nlog-samples
 
 /* Temporary filters, till need confirmed*/
 /wwwroot/fonts
