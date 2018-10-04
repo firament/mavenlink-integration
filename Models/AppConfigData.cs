@@ -8,6 +8,7 @@ namespace mlpoca.Models
 	{
 		public AppConfigData()
 		{
+			UpdateInstant = DateTime.Now;
 		}
 		
 		public int Version { get; set; } = 0;
@@ -18,6 +19,8 @@ namespace mlpoca.Models
 		public string MLKEY { get; set; } = "TBD";
 		public string DefaultCode { get; set; } = "demo";
 		public string CookieName { get; set; } = "MavenLinkPoC";
+
+		public DateTime UpdateInstant { get; set; }
 
 	}
 }
