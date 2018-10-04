@@ -17,7 +17,7 @@ namespace mlpoca
         {
 			// NLog: setup the logger first to catch all errors
 			var logger = NLog.Web.NLogBuilder
-							.ConfigureNLog("nlog.config")
+							.ConfigureNLog("NLog.config")
 							.GetCurrentClassLogger()
 							;
 
