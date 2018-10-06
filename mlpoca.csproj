@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <Content Update="NLog.config" CopyToPublishDirectory="Always" />
-    <Content Update="NLog.Development.config" CopyToPublishDirectory="Always" />
+    <Content Update="NLog.Development.config" CopyToOutputDirectory="Always" />
     <Content Update="01-Notes/**/*" CopyToPublishDirectory="Never" />
     <Content Update="appsettings.Development.json" CopyToPublishDirectory="Never" />
   </ItemGroup>

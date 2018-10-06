@@ -58,7 +58,6 @@ namespace mlpoca
 			services
 				.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
 				.AddCookie(options => {
-					
                 })
 				;
 
@@ -75,14 +74,17 @@ namespace mlpoca
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+
 			Console.WriteLine("Function {0} called at {1}", "Startup.Configure(IApplicationBuilder app, IHostingEnvironment env)", DateTime.Now.ToString());
             if (env.IsDevelopment())
             {
+			    Models.MpcPageModel.AppConfig.Environment = EnvironmentName.Development;
                 app.UseDeveloperExceptionPage();
             }
             else
             {
-                app.UseExceptionHandler("/Error");
+				Models.MpcPageModel.AppConfig.Environment = EnvironmentName.Production;
+				app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
 

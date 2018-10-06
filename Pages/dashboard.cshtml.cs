@@ -5,9 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
+
+using Microsoft.Extensions.Logging;
+using mlpoca.Models;
+
 namespace mlpoca.Pages
 {
-	public class dashboardModel : Models.MpcPageModel
+	public class dashboardModel : MpcPageModel
 	{
 		public void OnGet()
 		{

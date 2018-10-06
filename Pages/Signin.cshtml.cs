@@ -8,10 +8,18 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
+using Microsoft.Extensions.Logging;
+
 namespace mlpoca.Pages
 {
 	public class SigninModel : Models.MpcPageModel
 	{
+		public SigninModel(ILogger<SigninModel> logger) : base(logger)
+		{
+			// _log = logger;
+			_log.LogInformation("Initializing NLogTest");
+		}
+
 		public void OnGet()
 		{
 			Console.WriteLine("Function {0} called at {1}", "SigninModel.OnGet()", DateTime.Now.ToString());

@@ -10,6 +10,8 @@ using System.Net;
 using System.IO;
 using PTD = mlpoca.Models.PvtTestData;
 
+using Microsoft.Extensions.Logging;
+
 namespace mlpoca.Pages.TPages
 {
 	public class TestDemoModel : Models.MpcPageModel

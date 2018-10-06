@@ -4,17 +4,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using mlpoca.Models;
 
 using Microsoft.Extensions.Logging;
+
 
 namespace mlpoca.Pages
 {
 	public class NLogTestModel : Models.MpcPageModel
 	{
-		private readonly ILogger<NLogTestModel> _log;
-		public NLogTestModel(ILogger<NLogTestModel> logger)
+		// private readonly ILogger<NLogTestModel> _log;
+		public NLogTestModel(ILogger<NLogTestModel> logger) :base(logger)
 		{
-			_log = logger;
+			// _log = logger;
 			_log.LogInformation("Initializing NLogTest");
 		}
 

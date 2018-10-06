@@ -11,16 +11,18 @@ namespace mlpoca.Pages
 {
 	public class IndexModel : Models.MpcPageModel
 	{
-		private readonly ILogger<IndexModel> _logger;
-		public IndexModel(ILogger<IndexModel> logger)
+		public IndexModel(ILogger<IndexModel> logger) :base (logger)
 		{
-			_logger = logger;
+			_log.LogInformation("Initializing IndexModel");
 		}
 
 
 		public void OnGet()
 		{
-			_logger.LogInformation("Index page says hello");
+			string lsSessionCookieTag;
+			var lbCookiExists = HttpContext.Request.Cookies.TryGetValue(Models.MpaConstants.CookieName, out lsSessionCookieTag);
+			_log.LogDebug("Cookie Value is {0}");
+			_log.LogInformation("Index page says hello");
 		}
 	}
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Concurrent;
+// using Microsoft.AspNetCore.Hosting;
 
 namespace mlpoca.Models
 {
@@ -12,7 +13,7 @@ namespace mlpoca.Models
 		}
 		
 		public int Version { get; set; } = 0;
-		public string Environment { get; set; } = "Development";
+		public string Environment { get; set; } = Microsoft.AspNetCore.Hosting.EnvironmentName.Development;
 		public Hashtable UserTokensH { get; set; } = new Hashtable();
 		// public ConcurrentDictionary<string, string> UserTokensCD { get; set; }
 
