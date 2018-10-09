@@ -1,0 +1,88 @@
+﻿@model mlpoca.Models.NLogLevels;
+
+@using System;
+@using Microsoft.Extensions.Logging;
+@using mlpoca.Models;
+
+@{
+	ViewData["Title"] = "Working Files";
+	Layout = "_MPc_WF";
+}
+
+<div class="container-fluid p-2">
+
+	<div class="row">
+		<div class="col">
+			<div class="h1">Working Files</div>
+			<div class="small">Temporary files for debugging, to be removed post debugging.</div>
+		</div>
+	</div>
+
+	@if (ViewData["Message"] != null && ViewData["Message"].ToString().Length > 1)
+	{
+	<div class="card shadow p-3 border-danger bg-dark text-white w-75" >
+		<div class="card-body">
+			<h3 class="card-title">Result:</h3>
+			<div class="card-text">@ViewData["Message"]</div>
+		</div>
+	</div>
+	}
+
+	
+	<!-- Spacer Row --><div class="row pb-3"><div class="col"><div class="small">&nbsp;</div></div></div>
+	<div class="row">
+		<div class="col">
+			@(Html.ActionLink("Clean Reload", "Index", "WF", null, new { @class = "btn btn-lg btn-outline-info col-8" }))
+			<div class="text-secondary">
+				Reload page from scratch.
+			</div>
+		</div>
+	</div>
+
+	<!-- Spacer Row --><div class="row pb-3"><div class="col"><div class="small">&nbsp;</div></div></div>
+	<div class="row">
+		<div class="col">
+			<div class="h2">
+				NLog Tests
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		@for (int vI = 0; vI < Model.Levels.Length; vI++)
+		{
+			var vLevel = Model.Levels[vI];
+			<div class="col-4">
+				<a asp-controller="WF"
+				   asp-action="NLogTest"
+				   asp-route-Level="@vLevel.Value"
+				   class="btn btn-warning m-2 w-100">Log entry with @vLevel.Name</a>
+			</div>
+		}
+	</div>
+
+	<!-- Spacer Row -->
+	<div class="row pb-3"><div class="col"><div class="small">&nbsp;</div></div></div>
+	<div class="row">
+		<div class="col">
+			<div class="h2">
+				Application Tools:
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			@(Html.ActionLink("-- Restart Application --", "ShutdownSite", "WF", null, new { @class = "btn btn-lg btn-outline-danger col-8" }))
+			<div class="text-secondary">
+				Use with Extreme Caution!
+			</div>
+
+		</div>
+	</div>
+
+	<!-- Spacer Row -->
+	<div class="row pb-3"><div class="col"><div class="small">&nbsp;</div></div></div>
+
+
+
+</div>

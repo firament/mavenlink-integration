@@ -15,4 +15,4 @@ _local-notes*.md
 /* Temporary filters, till need confirmed*/
 /wwwroot/fonts
 /Models/PvtTestData.cs
-nlog-tests-output/
+nlog-output*/
