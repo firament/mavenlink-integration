@@ -51,12 +51,12 @@ namespace mlpoca.Models
 
 			string lsSessionCookieTag;
 			var lbCookiExists = context.HttpContext.Request.Cookies.TryGetValue(MpaConstants.CookieName, out lsSessionCookieTag);
-			_log.LogInformation("Cookie esists? {0}, has value {1}", lbCookiExists, lsSessionCookieTag);
+			_log.LogDebug("Cookie esists? {0}, Key {1} has value {2}", lbCookiExists, MpaConstants.CookieName, lsSessionCookieTag);
 
 			if (!HttpContext.Request.Cookies.ContainsKey(MpaConstants.CookieName))
 			{
 				lsSessionCookieTag = Guid.NewGuid().ToString("D");
-				_log.LogInformation("Creating session Cookie tag with value '{0}'", lsSessionCookieTag);
+				_log.LogInformation("Create session tag '{0}' with key {1}", lsSessionCookieTag, MpaConstants.CookieName);
 				context.HttpContext.Response.Cookies.Append(MpaConstants.CookieName, lsSessionCookieTag);
 			}
 		}

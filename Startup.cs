@@ -46,7 +46,8 @@ namespace mlpoca
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
                 options.CheckConsentNeeded = context => false;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
-            });
+				// options.HttpOnly = HttpOnlyPolicy;
+			});
 
 			services.AddSession(options =>
 				{
@@ -85,7 +86,7 @@ namespace mlpoca
             {
 				Models.MpcPageModel.AppConfig.Environment = EnvironmentName.Production;
 				app.UseExceptionHandler("/Error");
-                app.UseHsts();
+                // app.UseHsts();
             }
 
             // app.UseHttpsRedirection();
